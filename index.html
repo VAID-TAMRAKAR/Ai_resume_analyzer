@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer | Next-Gen Career Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <nav class="navbar glass">
+        <div class="logo">
+            <i class="fa-solid fa-brain"></i> AI Resume<span class="highlight">Analyzer</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#analyzer">Analyzer</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Unlock Your Career Potential with <span class="gradient-text">AI Intelligence</span></h1>
+            <p class="tagline">The world's most advanced liquid-core AI engine that optimizes your resume for ATS and human recruiters in seconds.</p>
+            <div class="hero-btns">
+                <a href="#analyzer" class="btn-primary">Analyze My Resume <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#features" class="btn-secondary">View Features</a>
+            </div>
+        </div>
+        <div class="hero-visual glass-card">
+            <div class="scan-line"></div>
+            <div class="code-snippet">
+                <span>> Analyzing structure...</span>
+                <span>> Parsing keywords...</span>
+                <span>> Optimizing for FAANG...</span>
+                <span class="success">> Match Found: 98%</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose AI Analyzer?</h2>
+        <div class="features-grid">
+            <div class="feature-card glass-card">
+                <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Deep AI Analysis</h3>
+                <p>Our neural network scans 50+ data points to ensure your resume matches job descriptions perfectly.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Instant Feedback</h3>
+                <p>Get actionable insights in under 3 seconds. No waiting times, just pure performance.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="icon-box"><i class="fa-solid fa-robot"></i></div>
+                <h3>ATS Score Checker</h3>
+                <p>Simulate real-world ATS algorithms used by Fortune 500 companies to prevent rejection.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Skill Gap Detection</h3>
+                <p>Identify missing hard and soft skills that recruiters are desperately looking for.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="analyzer" class="analyzer">
+        <h2 class="section-title">Upload & Analyze</h2>
+        <div class="analyzer-container glass-card">
+            
+            <div id="upload-area" class="upload-area">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <h3>Drag & Drop your Resume (PDF/DOCX)</h3>
+                <p>or click to browse</p>
+                <input type="file" id="file-input" hidden>
+                <button class="btn-primary" onclick="document.getElementById('file-input').click()">Select File</button>
+            </div>
+
+            <div id="loading-area" class="loading-area hidden">
+                <div class="loader"></div>
+                <p>AI is processing your profile...</p>
+            </div>
+
+            <div id="result-area" class="result-area hidden">
+                <div class="score-circle">
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="score-progress"></circle>
+                    </svg>
+                    <div class="score-text">
+                        <span id="score-number">0</span>%
+                        <small>Match</small>
+                    </div>
+                </div>
+                
+                <div class="analysis-details">
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-check-circle"></i> Strengths</h4>
+                        <ul id="strengths-list"></ul>
+                    </div>
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Improvements</h4>
+                        <ul id="weakness-list"></ul>
+                    </div>
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-layer-group"></i> Detected Skills</h4>
+                        <div class="skills-tags" id="skills-list"></div>
+                    </div>
+                </div>
+                <button class="btn-secondary" onclick="resetAnalyzer()">Analyze Another</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content glass-card">
+            <div class="about-text">
+                <h2>About The Project</h2>
+                <p>AI Resume Analyzer uses state-of-the-art Natural Language Processing (NLP) models designed in 2026. We bridge the gap between talented candidates and automated hiring systems.</p>
+                <p>Our mission is to democratize career advice, giving every student and professional a fair chance to land their dream job.</p>
+            </div>
+            <div class="about-stat">
+                <h3>10k+</h3>
+                <p>Resumes Optimized</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <form class="contact-form glass-card">
+            <div class="input-group">
+                <input type="text" required>
+                <label>Your Name</label>
+            </div>
+            <div class="input-group">
+                <input type="email" required>
+                <label>Email Address</label>
+            </div>
+            <div class="input-group">
+                <textarea required></textarea>
+                <label>Message</label>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-brain"></i> AI Resume Analyzer™
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 AI Resume Analyzer. Developed by <span class="highlight">JTV Explaiz</span>. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
